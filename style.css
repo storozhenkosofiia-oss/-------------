@@ -127,4 +127,137 @@ footer {
     padding: 32px;
     background: #222;
     color: #fff;
-}=
+}
+/* --- БАЗОВІ СТИЛІ: МОБІЛЬНИЙ (iPhone SE, 375px) --- */
+:root {
+    --color-primary: #2e5c9e;
+    --color-bg: #ffffff;
+    --color-muted: #6c757d;
+    --radius: 8px;
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: var(--font-main);
+}
+
+section { 
+    padding: 48px 16px; 
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+
+/* Навігація в стовпчик на мобільному */
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    padding: 20px;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column; 
+    gap: 12px;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+/* Фото під текстом на мобільному */
+.about-content {
+    display: flex;
+    flex-direction: column; 
+    gap: 32px;
+    align-items: center;
+}
+
+/* --- КРОК 4: СТИЛІ ФОРМИ --- */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: var(--radius);
+    font-family: var(--font-main);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(46,92,158,0.15);
+}
+
+button.btn {
+    border: none;
+    cursor: pointer;
+    background: var(--color-primary);
+    color: white;
+    padding: 14px 36px;
+    font-size: 1rem;
+    border-radius: var(--radius);
+    transition: all 0.2s;
+}
+
+button.btn:hover { opacity: 0.88; transform: translateY(-2px); }
+button.btn:active { transform: translateY(0); }
+
+
+/* --- КРОК 2: ПЛАНШЕТ (min-width: 768px) --- */
+@media (min-width: 768px) {
+    section { padding: 64px 24px; }
+    
+    h1 { font-size: 2.4rem; }
+    h2 { font-size: 1.8rem; }
+
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    nav ul {
+        flex-direction: row;
+        gap: 28px;
+    }
+
+    .about-content {
+        flex-direction: row; /* Фото поряд з текстом */
+        text-align: left;
+    }
+}
+
+/* --- КРОК 3: ДЕСКТОП (min-width: 1024px) --- */
+@media (min-width: 1024px) {
+    section { padding: 80px 32px; }
+
+    h1 { font-size: 2.8rem; }
+    h2 { font-size: 2rem; }
+
+    .about-content {
+        max-width: 1100px;
+        margin: 0 auto;
+    } 
+}
